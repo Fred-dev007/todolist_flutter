@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 class Todolist extends StatefulWidget {
   const Todolist({super.key});
@@ -51,7 +52,27 @@ class _TodolistState extends State<Todolist> {
         ),
         drawer: Drawer(
         child: ListView(
-          children: [ListTile(title: Text("Home"))],
+          children: [
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Home"),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder:(context)=> const Todolist()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Profil")
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text("Deconnexion"),
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder:(context)=> const Login()));
+              },
+            ),
+
+            ],
         ),
       ),
         body: Container(

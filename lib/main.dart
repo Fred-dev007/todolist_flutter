@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:todolist/routes/routes.dart';
 import 'screen/todolist.dart';
 import 'screen/home.dart';
+import 'screen/register.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final Routes route = Routes();
+   MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +20,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
         fontFamily: "Roboto"
       ),
-      home: Login()
-
+      home: Login(),
+      // initialRoute: '/',
+      // routes:route.getRoute()
     );
   }
 }
